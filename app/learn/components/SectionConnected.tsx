@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
+import MotionButton from "@/components/ui/MotionButton";
 import PurchaseModal from "@/app/components/PurchaseModal";
 import { fadeInUp } from "@/app/components/ui/MotionSection";
 
@@ -121,13 +122,14 @@ export default function SectionConnected() {
 
               {/* Power button */}
               <div className="pb-10 text-center">
-                <button
+                <MotionButton
                   type="button"
-                  className="inline-flex h-16 w-16 items-center justify-center rounded-full bg-linear-to-b from-zinc-900 to-black text-white shadow-[0_25px_50px_-12px_rgba(0,0,0,0.3)] cursor-pointer"
+                  variant="icon"
                   aria-label="Toggle connection"
+                  className="h-16 w-16 rounded-full bg-linear-to-b from-zinc-900 to-black text-xl shadow-[0_25px_50px_-12px_rgba(0,0,0,0.3)]"
                 >
-                  <span className="text-xl">⏻</span>
-                </button>
+                  <span>⏻</span>
+                </MotionButton>
               </div>
             </div>
           </div>
@@ -153,26 +155,21 @@ export default function SectionConnected() {
 
           {/* CTA buttons row – reuse Start Free / Lifetime Plan pattern */}
           <div className="mt-2 flex flex-col items-center gap-3 sm:flex-row sm:gap-4">
-            <motion.button
+            <MotionButton
               type="button"
               onClick={() => setIsPurchaseModalOpen(true)}
-              className="inline-flex min-w-[140px] items-center justify-center rounded-full bg-zinc-900 px-6 py-3 text-sm font-medium text-white shadow-sm transition hover:bg-zinc-800 cursor-pointer"
-              whileHover={{ scale: 1.03 }}
-              whileTap={{ scale: 0.97 }}
-              transition={{ duration: 0.18 }}
+              className="min-w-[140px] rounded-full px-6 py-3 text-sm"
             >
               Start Free
-            </motion.button>
-            <motion.button
+            </MotionButton>
+            <MotionButton
               type="button"
+              variant="secondary"
               onClick={() => setIsPurchaseModalOpen(true)}
-              className="inline-flex min-w-[140px] items-center justify-center rounded-full border border-zinc-200 bg-zinc-50 px-6 py-3 text-sm font-medium text-zinc-900 shadow-sm transition hover:border-zinc-300 hover:bg-white cursor-pointer"
-              whileHover={{ scale: 1.03 }}
-              whileTap={{ scale: 0.97 }}
-              transition={{ duration: 0.18 }}
+              className="min-w-[140px] rounded-full px-6 py-3 text-sm"
             >
               Lifetime Plan
-            </motion.button>
+            </MotionButton>
           </div>
 
           {/* Footnote with asterisk, reusing the same icon as Section 1 */}

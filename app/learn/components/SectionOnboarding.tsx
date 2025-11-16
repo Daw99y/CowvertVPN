@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { useState } from "react";
 import { motion } from "framer-motion";
+import MotionButton from "@/components/ui/MotionButton";
 import PurchaseModal from "@/app/components/PurchaseModal";
 import { fadeInUp } from "@/app/components/ui/MotionSection";
 
@@ -50,26 +51,21 @@ export default function SectionOnboarding() {
 
         {/* Primary actions – stack on mobile, sit side‑by‑side on larger screens */}
         <div className="mt-8 flex flex-col items-center gap-3 sm:flex-row sm:gap-4">
-          <motion.button
+          <MotionButton
             type="button"
             onClick={() => setIsPurchaseModalOpen(true)}
-            className="inline-flex min-w-[140px] items-center justify-center rounded-full bg-zinc-900 px-6 py-3 text-sm font-medium text-white shadow-sm transition hover:bg-zinc-800 cursor-pointer"
-            whileHover={{ scale: 1.03 }}
-            whileTap={{ scale: 0.97 }}
-            transition={{ duration: 0.18 }}
+            className="min-w-[140px] rounded-full px-6 py-3 text-sm"
           >
             Start Free
-          </motion.button>
-          <motion.button
+          </MotionButton>
+          <MotionButton
             type="button"
+            variant="secondary"
             onClick={() => setIsPurchaseModalOpen(true)}
-            className="inline-flex min-w-[140px] items-center justify-center rounded-full border border-zinc-200 bg-zinc-50 px-6 py-3 text-sm font-medium text-zinc-900 shadow-sm transition hover:border-zinc-300 hover:bg-white cursor-pointer"
-            whileHover={{ scale: 1.03 }}
-            whileTap={{ scale: 0.97 }}
-            transition={{ duration: 0.18 }}
+            className="min-w-[140px] rounded-full px-6 py-3 text-sm"
           >
             Lifetime Plan
-          </motion.button>
+          </MotionButton>
         </div>
 
         {/* Footnote with tiny icon + copy */}
@@ -151,18 +147,15 @@ export default function SectionOnboarding() {
 
                 {/* Card actions – simple Skip / Next buttons */}
                 <div className="mt-6 flex items-center justify-between gap-4 text-sm">
-                  <button
-                    type="button"
-                    className="text-zinc-500 transition hover:text-zinc-700 cursor-pointer"
-                  >
+                  <MotionButton variant="text" type="button" className="px-0 text-sm">
                     Skip
-                  </button>
-                  <button
+                  </MotionButton>
+                  <MotionButton
                     type="button"
-                    className="inline-flex flex-1 items-center justify-center rounded-xl bg-linear-to-b from-zinc-900 to-black px-5 py-3 text-sm font-medium text-white shadow-md transition hover:from-black hover:to-zinc-900 cursor-pointer"
+                    className="flex-1 rounded-xl bg-linear-to-b from-zinc-900 to-black px-5 py-3 text-sm shadow-md hover:from-black hover:to-zinc-900"
                   >
                     Next
-                  </button>
+                  </MotionButton>
                 </div>
               </div>
             </div>

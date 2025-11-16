@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { Check } from "lucide-react";
 import { useState } from "react";
+import MotionButton from "@/components/ui/MotionButton";
 import PurchaseModal from "../components/PurchaseModal";
 
 type ActivePurchaseModal = "free" | "lifetime" | null;
@@ -93,13 +94,14 @@ export default function PricingPage() {
                   </ul>
                 </div>
                 <div className="mt-8">
-                  <button
+                  <MotionButton
                     type="button"
+                    variant="secondary"
                     onClick={() => setActivePurchaseModal("free")}
-                    className="inline-flex items-center justify-center rounded-full border border-zinc-300 px-6 py-2.5 text-sm font-medium text-zinc-700 transition hover:border-zinc-900 hover:text-zinc-900 cursor-pointer"
+                    className="rounded-full px-6 py-2.5 text-sm"
                   >
                     Get Started
-                  </button>
+                  </MotionButton>
                 </div>
               </motion.div>
             </div>
@@ -164,13 +166,13 @@ export default function PricingPage() {
                   </ul>
                 </div>
                 <div className="mt-8">
-                  <button
+                  <MotionButton
                     type="button"
                     onClick={() => setActivePurchaseModal("lifetime")}
-                    className="inline-flex items-center justify-center rounded-full bg-zinc-900 px-6 py-2.5 text-sm font-medium text-white transition hover:bg-zinc-800 cursor-pointer"
+                    className="rounded-full px-6 py-2.5 text-sm"
                   >
                     Upgrade Now
-                  </button>
+                  </MotionButton>
                 </div>
               </motion.div>
             </div>

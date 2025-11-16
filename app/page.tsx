@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import MotionButton from "@/components/ui/MotionButton";
 import Modal from "./components/Modal";
 
 export default function Home() {
@@ -34,13 +35,13 @@ export default function Home() {
             A lightweight, open‑source VPN that shields your data—no unnecessary
             overhead, just privacy.
           </p>
-          <button
+          <MotionButton
             type="button"
             onClick={() => setIsDownloadModalOpen(true)}
-            className="mt-8 inline-flex items-center rounded-full bg-zinc-900 px-7 py-3 text-base text-white hover:bg-zinc-800 transition font-medium cursor-pointer"
+            className="mt-8 rounded-full px-7 py-3 text-base"
           >
             Download
-          </button>
+          </MotionButton>
           <p className="mt-6 text-sm md:text-base text-zinc-400">
             Delivers clean, fast protection with transparent, open-source
             privacy.

@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import MotionButton from "@/components/ui/MotionButton";
 import Modal from "@/app/components/Modal";
 
 export default function Footer() {
@@ -20,13 +21,14 @@ export default function Footer() {
             aria-label="Footer"
             className="flex flex-wrap items-center gap-x-4 gap-y-2 text-xs"
           >
-            <button
+            <MotionButton
               type="button"
+              variant="text"
               onClick={() => setIsDownloadModalOpen(true)}
-              className="text-zinc-400 hover:text-black cursor-pointer"
+              className="px-0 text-xs text-zinc-400 hover:text-black"
             >
               Download
-            </button>
+            </MotionButton>
             <a href="/docs" className="text-zinc-400 hover:text-black">
               Pricing
             </a>

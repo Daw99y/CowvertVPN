@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import MotionButton from "@/components/ui/MotionButton";
 import BaseModal from "./BaseModal";
 
 type PurchaseModalProps = {
@@ -29,13 +30,14 @@ const PurchaseModal: React.FC<PurchaseModalProps> = ({ isOpen, onClose }) => {
         </p>
       </div>
       <div className="mt-6 flex justify-end">
-        <button
+        <MotionButton
           type="button"
+          variant="secondary"
           onClick={onClose}
-          className="inline-flex items-center rounded-full border border-zinc-200 bg-white px-4 py-2 text-sm font-medium text-zinc-800 shadow-sm transition hover:border-zinc-300 hover:bg-zinc-50"
+          className="rounded-full px-4 py-2 text-sm"
         >
           Close
-        </button>
+        </MotionButton>
       </div>
     </BaseModal>
   );

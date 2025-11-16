@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useState } from "react";
+import MotionButton from "@/components/ui/MotionButton";
 import Modal from "@/app/components/Modal";
 
 export default function Header() {
@@ -52,13 +53,13 @@ export default function Header() {
 
           {/* Right: Actions */}
           <div className="flex items-center justify-end gap-2 sm:gap-4">
-            <button
+            <MotionButton
               type="button"
               onClick={() => setIsDownloadModalOpen(true)}
-              className="inline-flex h-10 items-center rounded-md bg-black px-4 text-base font-medium text-white hover:bg-zinc-900 cursor-pointer"
+              className="h-10 rounded-md px-4 text-base"
             >
               Download
-            </button>
+            </MotionButton>
           </div>
         </div>
       </div>
