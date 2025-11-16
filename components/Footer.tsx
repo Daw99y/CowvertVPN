@@ -15,11 +15,11 @@ export default function Footer() {
         onClose={() => setIsDownloadModalOpen(false)}
       />
       <div className="w-full px-6 py-3">
-        <div className="flex flex-wrap items-center justify-between gap-3">
+        <div className="flex flex-col md:flex-row flex-wrap items-center justify-center md:justify-between gap-3">
           <div className="text-xs text-zinc-600">© {year} Cowvert VPN</div>
           <nav
             aria-label="Footer"
-            className="flex flex-wrap items-center gap-x-4 gap-y-2 text-xs"
+            className="flex flex-wrap items-center justify-center gap-x-4 gap-y-2 text-xs"
           >
             <MotionButton
               type="button"
