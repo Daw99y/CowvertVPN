@@ -31,7 +31,7 @@ export default function Footer() {
               Pricing
             </a>
             <a
-              href="https://github.com"
+              href="https://discord.gg/cEtRnVS2"
               className="text-zinc-400 hover:text-black"
               target="_blank"
               rel="noopener noreferrer"
@@ -39,7 +39,7 @@ export default function Footer() {
               Discord
             </a>
             <a
-              href="https://discord.com"
+              href="https://github.com/kxvvyvvxw/CowvertVPN"
               className="text-zinc-400 hover:text-black"
               target="_blank"
               rel="noopener noreferrer"

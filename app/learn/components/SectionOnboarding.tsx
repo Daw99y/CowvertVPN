@@ -2,7 +2,9 @@
 
 import Image from "next/image";
 import { useState } from "react";
+import { motion } from "framer-motion";
 import PurchaseModal from "@/app/components/PurchaseModal";
+import { fadeInUp } from "@/app/components/ui/MotionSection";
 
 const FIGMA_WORLD_MAP_IMAGE =
   "https://www.figma.com/api/mcp/asset/15f8b7ca-0e19-42ed-8ec3-a099fe90fbec";
@@ -18,7 +20,7 @@ export default function SectionOnboarding() {
   return (
     <section
       id="learn-hero"
-      className="relative py-24 md:py-32 lg:py-36 px-6"
+      className="relative min-h-screen flex items-center justify-center py-24 md:py-32 lg:py-36 px-6"
       aria-labelledby="learn-hero-heading"
     >
       <PurchaseModal
@@ -48,20 +50,26 @@ export default function SectionOnboarding() {
 
         {/* Primary actions – stack on mobile, sit side‑by‑side on larger screens */}
         <div className="mt-8 flex flex-col items-center gap-3 sm:flex-row sm:gap-4">
-          <button
+          <motion.button
             type="button"
             onClick={() => setIsPurchaseModalOpen(true)}
             className="inline-flex min-w-[140px] items-center justify-center rounded-full bg-zinc-900 px-6 py-3 text-sm font-medium text-white shadow-sm transition hover:bg-zinc-800 cursor-pointer"
+            whileHover={{ scale: 1.03 }}
+            whileTap={{ scale: 0.97 }}
+            transition={{ duration: 0.18 }}
           >
             Start Free
-          </button>
-          <button
+          </motion.button>
+          <motion.button
             type="button"
             onClick={() => setIsPurchaseModalOpen(true)}
             className="inline-flex min-w-[140px] items-center justify-center rounded-full border border-zinc-200 bg-zinc-50 px-6 py-3 text-sm font-medium text-zinc-900 shadow-sm transition hover:border-zinc-300 hover:bg-white cursor-pointer"
+            whileHover={{ scale: 1.03 }}
+            whileTap={{ scale: 0.97 }}
+            transition={{ duration: 0.18 }}
           >
             Lifetime Plan
-          </button>
+          </motion.button>
         </div>
 
         {/* Footnote with tiny icon + copy */}
@@ -82,7 +90,11 @@ export default function SectionOnboarding() {
         </div>
 
         {/* Visual card inspired by the Figma layout */}
-        <div className="relative mt-16 w-full max-w-5xl">
+        <motion.div
+          className="relative mt-16 w-full max-w-5xl"
+          variants={fadeInUp}
+          transition={{ duration: 0.6, ease: "easeOut", delay: 0.08 }}
+        >
           {/* Outer window-style frame */}
           <div className="relative overflow-hidden rounded-[24px] border border-zinc-200 bg-white shadow-[0_18px_45px_rgba(15,23,42,0.12)]">
             {/* Top bar with macOS-like traffic lights */}
@@ -155,7 +167,7 @@ export default function SectionOnboarding() {
               </div>
             </div>
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

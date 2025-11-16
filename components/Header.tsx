@@ -32,12 +32,22 @@ export default function Header() {
             <Link href="/learn" className="text-zinc-700 hover:text-black">
               Learn
             </Link>
-            <Link href="/community" className="text-zinc-700 hover:text-black">
+            <a
+              href="https://discord.gg/cEtRnVS2"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-zinc-700 hover:text-black"
+            >
               Discord
-            </Link>
-            <Link href="/community" className="text-zinc-700 hover:text-black">
+            </a>
+            <a
+              href="https://github.com/kxvvyvvxw/CowvertVPN"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-zinc-700 hover:text-black"
+            >
               Github
-            </Link>
+            </a>
           </nav>
 
           {/* Right: Actions */}

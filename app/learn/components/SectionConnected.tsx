@@ -2,7 +2,9 @@
 
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
+import { motion } from "framer-motion";
 import PurchaseModal from "@/app/components/PurchaseModal";
+import { fadeInUp } from "@/app/components/ui/MotionSection";
 
 // Section 5 map visual from the "You’re connected" Figma section
 const FIGMA_CONNECTED_MAP =
@@ -65,7 +67,7 @@ export default function SectionConnected() {
     <section
       id="learn-section-5"
       ref={sectionRef}
-      className="border-t border-zinc-100 bg-white px-6 py-24 md:py-32"
+      className="border-t border-zinc-100 bg-white px-6 py-24 md:py-32 min-h-screen flex items-center justify-center"
     >
       <PurchaseModal
         isOpen={isPurchaseModalOpen}
@@ -73,7 +75,11 @@ export default function SectionConnected() {
       />
       <div className="mx-auto flex max-w-6xl flex-col items-center gap-12">
         {/* Window-style card showing the connected state map */}
-        <div className="w-full max-w-5xl">
+        <motion.div
+          className="w-full max-w-5xl"
+          variants={fadeInUp}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+        >
           <div className="relative overflow-hidden rounded-[24px] border border-zinc-200 bg-white shadow-[0_18px_45px_rgba(15,23,42,0.12)]">
             {/* Top bar with simple header (mimics app chrome) */}
             <div className="flex items-center justify-between px-5 py-4 text-xs text-zinc-500">
@@ -125,7 +131,7 @@ export default function SectionConnected() {
               </div>
             </div>
           </div>
-        </div>
+        </motion.div>
 
         {/* Text + CTAs below the card */}
         <div className="flex max-w-3xl flex-col items-center gap-6 text-center">
@@ -147,20 +153,26 @@ export default function SectionConnected() {
 
           {/* CTA buttons row – reuse Start Free / Lifetime Plan pattern */}
           <div className="mt-2 flex flex-col items-center gap-3 sm:flex-row sm:gap-4">
-            <button
+            <motion.button
               type="button"
               onClick={() => setIsPurchaseModalOpen(true)}
               className="inline-flex min-w-[140px] items-center justify-center rounded-full bg-zinc-900 px-6 py-3 text-sm font-medium text-white shadow-sm transition hover:bg-zinc-800 cursor-pointer"
+              whileHover={{ scale: 1.03 }}
+              whileTap={{ scale: 0.97 }}
+              transition={{ duration: 0.18 }}
             >
               Start Free
-            </button>
-            <button
+            </motion.button>
+            <motion.button
               type="button"
               onClick={() => setIsPurchaseModalOpen(true)}
               className="inline-flex min-w-[140px] items-center justify-center rounded-full border border-zinc-200 bg-zinc-50 px-6 py-3 text-sm font-medium text-zinc-900 shadow-sm transition hover:border-zinc-300 hover:bg-white cursor-pointer"
+              whileHover={{ scale: 1.03 }}
+              whileTap={{ scale: 0.97 }}
+              transition={{ duration: 0.18 }}
             >
               Lifetime Plan
-            </button>
+            </motion.button>
           </div>
 
           {/* Footnote with asterisk, reusing the same icon as Section 1 */}
