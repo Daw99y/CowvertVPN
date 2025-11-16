@@ -34,9 +34,7 @@ export default function RootLayout({
         className={`${varelaRound.variable} ${geistMono.variable} antialiased font-sans`}
       >
         <div className="min-h-screen flex flex-col">
-          <Suspense fallback={null}>
-            <Header />
-          </Suspense>
+          <Header />
           <main className="flex-1">{children}</main>
           <Footer />
         </div>

@@ -184,7 +184,8 @@ export default function SectionConnected() {
               />
             </span>
             <p>
-              We don&apos;t collect your data. We barely want to know you exist.
+              Your data stays yours. We don&apos;t store it, share it, or sell
+              it.
             </p>
           </div>
         </div>

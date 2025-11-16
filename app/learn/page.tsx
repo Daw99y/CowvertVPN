@@ -10,7 +10,7 @@ export default function LearnPage() {
   return (
     // Top-level <main> wraps all Learn content so it's easy to reason about layout
     <main className="min-h-screen bg-linear-to-b from-white to-zinc-50">
-      <MotionSection>
+      <MotionSection animateOnLoad>
         <SectionOnboarding />
       </MotionSection>
       <MotionSection>

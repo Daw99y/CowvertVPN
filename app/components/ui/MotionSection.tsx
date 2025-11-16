@@ -23,6 +23,7 @@ type MotionSectionProps = {
   delay?: number;
   className?: string;
   id?: string;
+  animateOnLoad?: boolean;
 };
 
 export default function MotionSection({
@@ -30,6 +31,7 @@ export default function MotionSection({
   delay,
   className,
   id,
+  animateOnLoad,
 }: MotionSectionProps) {
   const transition =
     delay != null
@@ -42,9 +44,10 @@ export default function MotionSection({
       className={className}
       variants={fadeInUp}
       initial="hidden"
-      whileInView="show"
-      viewport={{ once: true, margin: "-100px" }}
       transition={transition}
+      {...(animateOnLoad
+        ? { animate: "show" }
+        : { whileInView: "show", viewport: { once: true, margin: "-100px" } })}
     >
       {children}
     </motion.section>

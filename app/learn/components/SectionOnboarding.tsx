@@ -2,13 +2,10 @@
 
 import Image from "next/image";
 import { useState } from "react";
-import { motion } from "framer-motion";
 import MotionButton from "@/components/ui/MotionButton";
 import PurchaseModal from "@/app/components/PurchaseModal";
-import { fadeInUp } from "@/app/components/ui/MotionSection";
 
-const FIGMA_WORLD_MAP_IMAGE =
-  "https://www.figma.com/api/mcp/asset/15f8b7ca-0e19-42ed-8ec3-a099fe90fbec";
+const FIGMA_WORLD_MAP_IMAGE = "/images/world-map.png";
 
 // These two icons are now served locally from /public/images
 const FIGMA_ASTERISK_ICON = "/images/learn-asterisk.png";
@@ -86,11 +83,7 @@ export default function SectionOnboarding() {
         </div>
 
         {/* Visual card inspired by the Figma layout */}
-        <motion.div
-          className="relative mt-16 w-full max-w-5xl"
-          variants={fadeInUp}
-          transition={{ duration: 0.6, ease: "easeOut", delay: 0.08 }}
-        >
+        <div className="relative mt-16 w-full max-w-5xl">
           {/* Outer window-style frame */}
           <div className="relative overflow-hidden rounded-[24px] border border-zinc-200 bg-white shadow-[0_18px_45px_rgba(15,23,42,0.12)]">
             {/* Top bar with macOS-like traffic lights */}
@@ -106,6 +99,7 @@ export default function SectionOnboarding() {
                 src={FIGMA_WORLD_MAP_IMAGE}
                 alt="World map visualization for Cowvert VPN"
                 fill
+                sizes="(min-width: 1024px) 960px, 100vw"
                 priority
                 className="object-cover object-center opacity-95"
               />
@@ -160,7 +154,7 @@ export default function SectionOnboarding() {
               </div>
             </div>
           </div>
-        </motion.div>
+        </div>
       </div>
     </section>
   );

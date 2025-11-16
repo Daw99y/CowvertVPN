@@ -9,7 +9,7 @@ export default function Header() {
   const [isDownloadModalOpen, setIsDownloadModalOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 bg-white/70 backdrop-blur supports-backdrop-filter:bg-white/60">
+    <header className="sticky top-0 z-50 bg-white will-change-transform">
       <Modal
         isOpen={isDownloadModalOpen}
         onClose={() => setIsDownloadModalOpen(false)}
