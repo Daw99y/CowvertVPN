@@ -9,7 +9,7 @@ import MotionSection from "../components/ui/MotionSection";
 export default function LearnPage() {
   return (
     // Top-level <main> wraps all Learn content so it's easy to reason about layout
-    <main className="min-h-screen bg-linear-to-b from-white to-zinc-50 overflow-x-hidden">
+    <main className="min-h-screen bg-linear-to-b from-white to-zinc-50">
       <MotionSection animateOnLoad>
         <SectionOnboarding />
       </MotionSection>

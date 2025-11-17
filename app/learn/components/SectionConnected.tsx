@@ -184,7 +184,7 @@ function ResponsiveConnectedContainer({
           900 / 1400 = 0.642857 = 64.2857%
         */}
         <div
-          className="relative w-full max-w-full overflow-hidden"
+          className="relative w-full overflow-hidden"
           style={{ paddingBottom: "64.2857%" }}
         >
           {/* Absolutely positioned content that scales */}
