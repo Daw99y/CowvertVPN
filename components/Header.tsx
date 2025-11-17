@@ -35,7 +35,7 @@ export default function Header() {
   const closeMobileMenu = () => setIsMobileMenuOpen(false);
 
   return (
-    <header className="fixed inset-x-0 top-0 z-50 bg-white/80 backdrop-blur border-b border-zinc-100 will-change-transform">
+    <header className="sticky top-0 z-50 bg-white will-change-transform">
       <Modal
         isOpen={isDownloadModalOpen}
         onClose={() => setIsDownloadModalOpen(false)}
@@ -122,8 +122,7 @@ export default function Header() {
       {/* Mobile Menu Overlay - Full Screen */}
       {isMobileMenuOpen && (
         <div
-          className="fixed inset-0 z-40 h-screen w-screen bg-white md:hidden animate-in fade-in duration-300"
-          style={{ top: "72px" }}
+          className="fixed inset-x-0 top-[72px] bottom-0 z-40 w-full bg-white md:hidden animate-in fade-in duration-300"
         >
           <nav
             aria-label="Mobile navigation"
