@@ -10,7 +10,7 @@ const FIGMA_WORLD_MAP_IMAGE = "/images/world-map.png";
 // These two icons are now served locally from /public/images
 const FIGMA_ASTERISK_ICON = "/images/learn-asterisk.png";
 
-const FIGMA_BOLT_ICON = "/images/learn-bolt.png";
+const FIGMA_BOLT_ICON = "/images/Bolty.png";
 
 export default function SectionOnboarding() {
   const [isPurchaseModalOpen, setIsPurchaseModalOpen] = useState(false);

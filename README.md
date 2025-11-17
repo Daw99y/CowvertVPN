@@ -46,7 +46,7 @@ Under the hood it is a standard Next.js front-end — there is **no real tunneli
 - **Tailwind CSS** – Utility-first styling for fast, consistent UI.
 - **Framer Motion** – Animations and micro-interactions (where appropriate).
 - **Spline 3D** (optional) – 3D scenes or models to support the Cowvert brand.
-- **Vercel** (planned) – Zero-config deployment and previews.
+- **Vercel** - cowvert-vpn.vercel.app
 
 > Note: The stack is used purely for the **front-end experience**. There is **no VPN protocol or cryptography layer** implemented here.
 
