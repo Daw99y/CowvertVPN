@@ -4,19 +4,19 @@ export default function SectionServers() {
   return (
     <section
       id="learn-section-4"
-      className="border-t border-zinc-100 bg-white px-6 py-24 md:py-32 min-h-[80vh] flex items-center"
+      className="border-t border-zinc-100 bg-white px-6 py-24 md:py-32 min-h-[80vh] flex items-center overflow-hidden"
     >
       {/* Grid layout mirrors Section 2, but with device on the left and text on the right */}
-      <div className="mx-auto grid max-w-6xl items-center gap-12 md:grid-cols-2">
+      <div className="mx-auto grid w-full max-w-6xl items-center gap-12 md:grid-cols-2">
         {/* Left column – servers device visual */}
-        <div className="flex justify-center md:justify-start">
-          <div className="transform scale-[0.85] origin-center">
+        <div className="flex justify-center md:justify-start overflow-hidden">
+          <div className="transform scale-[0.5] sm:scale-[0.6] md:scale-[0.7] lg:scale-[0.85] origin-center">
             <ServersDeviceMockup />
           </div>
         </div>
 
         {/* Right column – copy from the Figma design */}
-        <div className="flex flex-col gap-6 text-right items-end">
+        <div className="flex flex-col gap-6 text-left md:text-right md:items-end">
           {/* Overline label */}
           <p className="text-xs font-medium uppercase tracking-[0.18em] text-zinc-500">
             Fast. Global. Honest.

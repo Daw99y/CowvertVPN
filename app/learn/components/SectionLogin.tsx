@@ -4,10 +4,10 @@ export default function SectionLogin() {
   return (
     <section
       id="learn-section-2"
-      className="border-t border-zinc-100 bg-white px-6 py-24 md:py-32 min-h-[80vh] flex items-center"
+      className="border-t border-zinc-100 bg-white px-6 py-24 md:py-32 min-h-[80vh] flex items-center overflow-hidden"
     >
       {/* Use a responsive grid: text on the left, device visual on the right */}
-      <div className="mx-auto grid max-w-6xl items-center gap-12 md:grid-cols-2">
+      <div className="mx-auto grid w-full max-w-6xl items-center gap-12 md:grid-cols-2">
         {/* Left column – copy from the Figma design */}
         <div className="flex flex-col gap-6">
           {/* Overline label */}
@@ -29,8 +29,8 @@ export default function SectionLogin() {
         </div>
 
         {/* Right column – iOS device mockup */}
-        <div className="flex justify-center md:justify-end">
-          <div className="transform scale-[0.85] origin-center">
+        <div className="flex justify-center md:justify-end overflow-hidden">
+          <div className="transform scale-[0.5] sm:scale-[0.6] md:scale-[0.7] lg:scale-[0.85] origin-center">
             <LoginDeviceMockup />
           </div>
         </div>
