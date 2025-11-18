@@ -3,9 +3,7 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import MotionButton from "@/components/ui/MotionButton";
-import MotionSection, {
-  fadeInUp,
-} from "@/app/components/ui/MotionSection";
+import MotionSection, { fadeInUp } from "@/app/components/ui/MotionSection";
 import Modal from "./components/Modal";
 
 export default function Home() {
@@ -92,8 +90,8 @@ export default function Home() {
               Cowvert VPN
             </h1>
             <p className="mt-4 text-lg md:text-xl text-zinc-600 max-w-xl mx-auto">
-              A lightweight, open‑source VPN that shields your data—no
-              unnecessary overhead, just privacy.
+              A lightweight, open‑source VPN that shields your data— <br />
+              no unnecessary overhead, just privacy.
             </p>
             <MotionButton
               type="button"

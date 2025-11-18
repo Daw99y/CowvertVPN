@@ -98,7 +98,8 @@ export default function SectionConnected() {
 
           {/* Heading */}
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight text-zinc-900">
-            You&apos;re connected. That&apos;s all there is to it.
+            You&apos;re connected. <br />
+            That&apos;s all there is to it.
           </h2>
 
           {/* Supporting copy */}
