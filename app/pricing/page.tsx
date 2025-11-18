@@ -1,7 +1,19 @@
 "use client";
 
-import { Check } from "lucide-react";
 import { useState } from "react";
+import {
+  GlobeIcon,
+  LockClosedIcon,
+  EyeNoneIcon,
+  RocketIcon,
+  ChatBubbleIcon,
+  LapTimerIcon,
+  LightningBoltIcon,
+  PersonIcon,
+  UpdateIcon,
+  SpeakerLoudIcon,
+  TokensIcon,
+} from "@radix-ui/react-icons";
 import MotionButton from "@/components/ui/MotionButton";
 import PurchaseModal from "../components/PurchaseModal";
 import MotionSection from "../components/ui/MotionSection";
@@ -28,8 +40,9 @@ export default function PricingPage() {
             Simple, transparent pricing
           </h1>
           <p className="mt-4 text-lg text-zinc-500 max-w-2xl mx-auto">
-            Choose the plan that fits your flow. Start free, upgrade once — stay
-            covered for life.
+            Choose the plan that fits your flow. Start free, upgrade once —{" "}
+            <br />
+            stay covered for life.
           </p>
         </MotionSection>
 
@@ -48,40 +61,55 @@ export default function PricingPage() {
               </div>
               <div className="border-t border-zinc-100 mt-6 pt-6">
                 <ul className="space-y-3">
-                  <li className="flex items-center gap-3 text-zinc-600 text-sm">
-                    <Check className="w-4 h-4 text-zinc-400" aria-hidden />
+                  <li className="flex items-center gap-3 text-zinc-600 text-sm border-b border-neutral-200/50 pb-3">
+                    <GlobeIcon className="w-4 h-4 text-zinc-400" aria-hidden />
                     <span>Access to standard VPN nodes</span>
                   </li>
-                  <li className="flex items-center gap-3 text-zinc-600 text-sm">
-                    <Check className="w-4 h-4 text-zinc-400" aria-hidden />
+                  <li className="flex items-center gap-3 text-zinc-600 text-sm border-b border-neutral-200/50 pb-3">
+                    <PersonIcon className="w-4 h-4 text-zinc-400" aria-hidden />
                     <span>1 connected device</span>
                   </li>
-                  <li className="flex items-center gap-3 text-zinc-600 text-sm">
-                    <Check className="w-4 h-4 text-zinc-400" aria-hidden />
+                  <li className="flex items-center gap-3 text-zinc-600 text-sm border-b border-neutral-200/50 pb-3">
+                    <LapTimerIcon
+                      className="w-4 h-4 text-zinc-400"
+                      aria-hidden
+                    />
                     <span>10 GB / month data limit</span>
                   </li>
-                  <li className="flex items-center gap-3 text-zinc-600 text-sm">
-                    <Check className="w-4 h-4 text-zinc-400" aria-hidden />
+                  <li className="flex items-center gap-3 text-zinc-600 text-sm border-b border-neutral-200/50 pb-3">
+                    <LockClosedIcon
+                      className="w-4 h-4 text-zinc-400"
+                      aria-hidden
+                    />
                     <span>AES-256 encryption</span>
                   </li>
-                  <li className="flex items-center gap-3 text-zinc-600 text-sm">
-                    <Check className="w-4 h-4 text-zinc-400" aria-hidden />
+                  <li className="flex items-center gap-3 text-zinc-600 text-sm border-b border-neutral-200/50 pb-3">
+                    <EyeNoneIcon
+                      className="w-4 h-4 text-zinc-400"
+                      aria-hidden
+                    />
                     <span>No-log policy</span>
                   </li>
-                  <li className="flex items-center gap-3 text-zinc-600 text-sm">
-                    <Check className="w-4 h-4 text-zinc-400" aria-hidden />
+                  <li className="flex items-center gap-3 text-zinc-600 text-sm border-b border-neutral-200/50 pb-3">
+                    <ChatBubbleIcon
+                      className="w-4 h-4 text-zinc-400"
+                      aria-hidden
+                    />
                     <span>Community support</span>
                   </li>
-                  <li className="flex items-center gap-3 text-zinc-600 text-sm">
-                    <Check className="w-4 h-4 text-zinc-400" aria-hidden />
+                  <li className="flex items-center gap-3 text-zinc-600 text-sm border-b border-neutral-200/50 pb-3">
+                    <RocketIcon className="w-4 h-4 text-zinc-400" aria-hidden />
                     <span>Basic speed (up to 50 Mbps)</span>
                   </li>
-                  <li className="flex items-center gap-3 text-zinc-600 text-sm">
-                    <Check className="w-4 h-4 text-zinc-400" aria-hidden />
+                  <li className="flex items-center gap-3 text-zinc-600 text-sm border-b border-neutral-200/50 pb-3">
+                    <GlobeIcon className="w-4 h-4 text-zinc-400" aria-hidden />
                     <span>Limited region selection</span>
                   </li>
-                  <li className="flex items-center gap-3 text-zinc-600 text-sm">
-                    <Check className="w-4 h-4 text-zinc-400" aria-hidden />
+                  <li className="flex items-center gap-3 text-zinc-600 text-sm last:border-b-0 last:pb-0">
+                    <SpeakerLoudIcon
+                      className="w-4 h-4 text-zinc-400"
+                      aria-hidden
+                    />
                     <span>Ads in dashboard</span>
                   </li>
                 </ul>
@@ -108,40 +136,64 @@ export default function PricingPage() {
               </div>
               <div className="border-t border-zinc-100 mt-6 pt-6">
                 <ul className="space-y-3">
-                  <li className="flex items-center gap-3 text-zinc-600 text-sm">
-                    <Check className="w-4 h-4 text-zinc-400" aria-hidden />
+                  <li className="flex items-center gap-3 text-zinc-600 text-sm border-b border-neutral-200/50 pb-3">
+                    <RocketIcon
+                      className="w-4 h-4 text-green-500"
+                      aria-hidden
+                    />
                     <span>Unlimited bandwidth</span>
                   </li>
-                  <li className="flex items-center gap-3 text-zinc-600 text-sm">
-                    <Check className="w-4 h-4 text-zinc-400" aria-hidden />
+                  <li className="flex items-center gap-3 text-zinc-600 text-sm border-b border-neutral-200/50 pb-3">
+                    <GlobeIcon className="w-4 h-4 text-green-500" aria-hidden />
                     <span>All global VPN nodes</span>
                   </li>
-                  <li className="flex items-center gap-3 text-zinc-600 text-sm">
-                    <Check className="w-4 h-4 text-zinc-400" aria-hidden />
+                  <li className="flex items-center gap-3 text-zinc-600 text-sm border-b border-neutral-200/50 pb-3">
+                    <PersonIcon
+                      className="w-4 h-4 text-green-500"
+                      aria-hidden
+                    />
                     <span>Up to 5 connected devices</span>
                   </li>
-                  <li className="flex items-center gap-3 text-zinc-600 text-sm">
-                    <Check className="w-4 h-4 text-zinc-400" aria-hidden />
+                  <li className="flex items-center gap-3 text-zinc-600 text-sm border-b border-neutral-200/50 pb-3">
+                    <LockClosedIcon
+                      className="w-4 h-4 text-green-500"
+                      aria-hidden
+                    />
                     <span>AES-256 + ChaCha20 encryption</span>
                   </li>
-                  <li className="flex items-center gap-3 text-zinc-600 text-sm">
-                    <Check className="w-4 h-4 text-zinc-400" aria-hidden />
+                  <li className="flex items-center gap-3 text-zinc-600 text-sm border-b border-neutral-200/50 pb-3">
+                    <EyeNoneIcon
+                      className="w-4 h-4 text-green-500"
+                      aria-hidden
+                    />
                     <span>Zero-log guarantee</span>
                   </li>
-                  <li className="flex items-center gap-3 text-zinc-600 text-sm">
-                    <Check className="w-4 h-4 text-zinc-400" aria-hidden />
+                  <li className="flex items-center gap-3 text-zinc-600 text-sm border-b border-neutral-200/50 pb-3">
+                    <ChatBubbleIcon
+                      className="w-4 h-4 text-green-500"
+                      aria-hidden
+                    />
                     <span>Priority email support</span>
                   </li>
-                  <li className="flex items-center gap-3 text-zinc-600 text-sm">
-                    <Check className="w-4 h-4 text-zinc-400" aria-hidden />
+                  <li className="flex items-center gap-3 text-zinc-600 text-sm border-b border-neutral-200/50 pb-3">
+                    <LightningBoltIcon
+                      className="w-4 h-4 text-green-500"
+                      aria-hidden
+                    />
                     <span>Early access to new tools</span>
                   </li>
-                  <li className="flex items-center gap-3 text-zinc-600 text-sm">
-                    <Check className="w-4 h-4 text-zinc-400" aria-hidden />
+                  <li className="flex items-center gap-3 text-zinc-600 text-sm border-b border-neutral-200/50 pb-3">
+                    <TokensIcon
+                      className="w-4 h-4 text-green-500"
+                      aria-hidden
+                    />
                     <span>No ads, no limits</span>
                   </li>
-                  <li className="flex items-center gap-3 text-zinc-600 text-sm">
-                    <Check className="w-4 h-4 text-zinc-400" aria-hidden />
+                  <li className="flex items-center gap-3 text-zinc-600 text-sm last:border-b-0 last:pb-0">
+                    <UpdateIcon
+                      className="w-4 h-4 text-green-500"
+                      aria-hidden
+                    />
                     <span>Lifetime updates and support</span>
                   </li>
                 </ul>
