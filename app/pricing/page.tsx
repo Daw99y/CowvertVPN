@@ -104,12 +104,7 @@ export default function PricingPage() {
                 <h2 className="text-lg font-semibold text-zinc-900">
                   Lifetime Access
                 </h2>
-                <div className="text-5xl font-light text-zinc-900">
-                  $99{" "}
-                  <span className="text-base font-normal text-zinc-600">
-                    one-time
-                  </span>
-                </div>
+                <div className="text-5xl font-light text-zinc-900">$99 </div>
               </div>
               <div className="border-t border-zinc-100 mt-6 pt-6">
                 <ul className="space-y-3">
