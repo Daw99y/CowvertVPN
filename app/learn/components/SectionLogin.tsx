@@ -20,7 +20,7 @@ export default function SectionLogin() {
 
           {/* Main heading */}
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight text-zinc-900">
-            Login only if you want to.
+            Login —<br /> only if you want to.
           </h2>
 
           {/* Supporting paragraph */}
