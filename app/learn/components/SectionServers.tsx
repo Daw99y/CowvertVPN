@@ -1,18 +1,18 @@
 "use client";
 
+import { useEffect, useRef } from "react";
+
 export default function SectionServers() {
   return (
     <section
       id="learn-section-4"
-      className="border-t border-zinc-100 bg-white px-6 py-24 md:py-32 min-h-[80vh] flex items-center"
+      className="border-t border-zinc-100 bg-white px-6 py-24 md:py-32 min-h-[90vh] flex items-center"
     >
       {/* Grid layout mirrors Section 2, but with device on the left and text on the right */}
       <div className="mx-auto grid w-full max-w-6xl items-center gap-12 md:grid-cols-2">
         {/* Left column – servers device visual */}
-        <div className="flex justify-center md:justify-start overflow-hidden">
-          <div className="transform scale-[0.5] sm:scale-[0.6] md:scale-[0.7] lg:scale-[0.85] origin-center">
-            <ServersDeviceMockup />
-          </div>
+        <div className="flex justify-center md:justify-start">
+          <ResponsiveDeviceContainer />
         </div>
 
         {/* Right column – copy from the Figma design */}
@@ -36,6 +36,58 @@ export default function SectionServers() {
         </div>
       </div>
     </section>
+  );
+}
+
+/**
+ * ResponsiveDeviceContainer – Scales the 430x900 device proportionally
+ * Maintains aspect ratio and scales down on smaller screens
+ */
+function ResponsiveDeviceContainer() {
+  const containerRef = useRef<HTMLDivElement>(null);
+  const contentRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const updateScale = () => {
+      if (containerRef.current && contentRef.current) {
+        const containerWidth = containerRef.current.offsetWidth;
+        // Base width is 430px for the device
+        const scale = Math.min(1, containerWidth / 430);
+        contentRef.current.style.transform = `scale(${scale})`;
+      }
+    };
+
+    updateScale();
+    window.addEventListener("resize", updateScale);
+    return () => window.removeEventListener("resize", updateScale);
+  }, []);
+
+  return (
+    <div className="relative mx-auto w-full max-w-full">
+      {/* Container that maintains aspect ratio */}
+      <div ref={containerRef} className="relative mx-auto w-full max-w-[430px]">
+        {/* 
+          Using aspect ratio trick: paddingBottom creates height based on width
+          900 / 430 = 2.093023 = 209.3023%
+        */}
+        <div className="relative w-full" style={{ paddingBottom: "209.3023%" }}>
+          {/* Absolutely positioned content that scales */}
+          <div className="absolute left-1/2 top-0 -translate-x-1/2">
+            <div
+              ref={contentRef}
+              style={{
+                width: "430px",
+                height: "900px",
+                transformOrigin: "top center",
+                transition: "transform 0.2s ease-out",
+              }}
+            >
+              <ServersDeviceMockup />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   );
 }
 
@@ -137,10 +189,10 @@ function ServersDeviceMockup() {
 
   return (
     <div className="relative w-[430px] h-[900px]">
-      {/* Outer device shadow/frame */}
-      <div className="absolute inset-0 rounded-[60px] shadow-[0_50px_100px_-20px_rgba(0,0,0,0.15),0_30px_60px_-30px_rgba(0,0,0,0.2)]">
+      {/* Outer device frame with stronger shadow */}
+      <div className="absolute inset-0 rounded-[60px] shadow-[0_60px_120px_rgba(15,23,42,0.3)]">
         {/* Device bezel - F5F5F5 color */}
-        <div className="absolute inset-0 rounded-[60px] bg-[#f5f5f5]">
+        <div className="absolute inset-0 rounded-[60px] bg-[#f5f5f5] border border-zinc-200/50">
           {/* Inner screen area with white background */}
           <div className="absolute left-[12px] top-[12px] w-[406px] h-[876px] rounded-[48px] bg-black">
             <div className="absolute left-[2px] top-[2px] w-[402px] h-[872px] rounded-[46px] bg-white overflow-hidden">

@@ -9,7 +9,7 @@ export default function Footer() {
   const [isDownloadModalOpen, setIsDownloadModalOpen] = useState(false);
 
   return (
-    <footer className="relative z-10">
+    <footer className="relative z-50 ">
       <Modal
         isOpen={isDownloadModalOpen}
         onClose={() => setIsDownloadModalOpen(false)}
