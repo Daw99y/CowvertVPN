@@ -5,8 +5,15 @@ import { motion } from "framer-motion";
 import MotionButton from "@/components/ui/MotionButton";
 import MotionSection, { fadeInUp } from "@/app/components/ui/MotionSection";
 import Modal from "./components/Modal";
+import { useRouter } from "next/navigation";
+import {
+  LightningBoltIcon,
+  GlobeIcon,
+  LockClosedIcon,
+} from "@radix-ui/react-icons";
 
 export default function Home() {
+  const router = useRouter();
   const [isDownloadModalOpen, setIsDownloadModalOpen] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
 
@@ -90,19 +97,45 @@ export default function Home() {
               Cowvert VPN
             </h1>
             <p className="mt-4 text-lg md:text-xl text-zinc-600 max-w-xl mx-auto">
-              A lightweight, open‑source VPN that shields your data— <br />
-              no unnecessary overhead, just privacy.
+              Privacy that minds its business.
             </p>
-            <MotionButton
-              type="button"
-              onClick={() => setIsDownloadModalOpen(true)}
-              className="mt-8 rounded-full px-7 py-3 text-base"
-            >
-              Download
-            </MotionButton>
-            <p className="mt-6 text-sm md:text-base text-zinc-400">
-              Delivers clean, fast protection with transparent, open-source
-              privacy.
+            <p className="mt-3 text-base md:text-lg text-zinc-500 max-w-xl mx-auto">
+              Open-source, lightweight, and built to keep your data yours —
+              automatically.
+            </p>
+            <div className="mt-8 flex flex-wrap justify-center gap-4">
+              <MotionButton
+                type="button"
+                onClick={() => setIsDownloadModalOpen(true)}
+                className="rounded-full px-7 py-3 text-base"
+              >
+                Download
+              </MotionButton>
+              <MotionButton
+                type="button"
+                variant="secondary"
+                onClick={() => router.push("/pricing")}
+                className="rounded-full px-7 py-3 text-base"
+              >
+                Lifetime Plan
+              </MotionButton>
+            </div>
+            <p className="mt-4 text-xs md:text-sm text-zinc-400 flex flex-wrap justify-center gap-4">
+              <span className="inline-flex items-center gap-2">
+                <LightningBoltIcon
+                  className="h-4 w-4 text-zinc-400"
+                  aria-hidden
+                />
+                AES-256 + WireGuard
+              </span>
+              <span className="inline-flex items-center gap-2">
+                <GlobeIcon className="h-4 w-4 text-zinc-400" aria-hidden />
+                99+ global regions
+              </span>
+              <span className="inline-flex items-center gap-2">
+                <LockClosedIcon className="h-4 w-4 text-zinc-400" aria-hidden />
+                No logins required
+              </span>
             </p>
           </motion.div>
         </div>
