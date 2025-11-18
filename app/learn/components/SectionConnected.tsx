@@ -2,6 +2,8 @@
 
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
+import { SiApple, SiLinux, SiIos, SiAndroid } from "react-icons/si";
+import { FaWindows } from "react-icons/fa";
 import MotionButton from "@/components/ui/MotionButton";
 import PurchaseModal from "@/app/components/PurchaseModal";
 import MotionSection from "@/app/components/ui/MotionSection";
@@ -105,8 +107,8 @@ export default function SectionConnected() {
           {/* Supporting copy */}
           <p className="text-base md:text-lg text-zinc-600">
             Cowvert encrypts your traffic, hides your IP, and keeps you
-            anonymous — automatically. No dashboards to configure. No ads. No
-            nonsense.
+            anonymous. <br />
+            No dashboards to configure. No ads. No nonsense.
           </p>
 
           {/* CTA buttons row */}
@@ -139,8 +141,32 @@ export default function SectionConnected() {
                 className="h-3 w-3"
               />
             </span>
-            <p>
-              Cross-platform support macOS · Windows · Linux · iOS · Android
+            <p className="flex items-center gap-2 flex-wrap justify-center">
+              <span>Cross-platform support</span>
+              <span className="inline-flex items-center gap-1">
+                <SiApple className="w-4 h-4" />
+                <span>macOS</span>
+              </span>
+              <span>·</span>
+              <span className="inline-flex items-center gap-1">
+                <FaWindows className="w-4 h-4" />
+                <span>Windows</span>
+              </span>
+              <span>·</span>
+              <span className="inline-flex items-center gap-1">
+                <SiLinux className="w-4 h-4" />
+                <span>Linux</span>
+              </span>
+              <span>·</span>
+              <span className="inline-flex items-center gap-1">
+                <SiIos className="w-4 h-4" />
+                <span>iOS</span>
+              </span>
+              <span>·</span>
+              <span className="inline-flex items-center gap-1">
+                <SiAndroid className="w-4 h-4" />
+                <span>Android</span>
+              </span>
             </p>
           </div>
         </div>

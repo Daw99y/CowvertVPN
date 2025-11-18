@@ -40,8 +40,8 @@ export default function PricingPage() {
             Simple, transparent pricing
           </h1>
           <p className="mt-4 text-lg text-zinc-500 max-w-2xl mx-auto">
-            Choose the plan that fits your flow. Start free, upgrade once —{" "}
-            <br />
+            Choose the plan that fits your flow. <br />
+            Start free, upgrade once — <br />
             stay covered for life.
           </p>
         </MotionSection>

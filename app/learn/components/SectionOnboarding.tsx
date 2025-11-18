@@ -2,6 +2,8 @@
 
 import Image from "next/image";
 import { useState, useEffect, useRef } from "react";
+import { SiApple, SiLinux, SiIos, SiAndroid } from "react-icons/si";
+import { FaWindows } from "react-icons/fa";
 import MotionButton from "@/components/ui/MotionButton";
 import PurchaseModal from "@/app/components/PurchaseModal";
 import MotionSection from "@/app/components/ui/MotionSection";
@@ -84,7 +86,33 @@ export default function SectionOnboarding() {
               className="h-3 w-3"
             />
           </span>
-          <p>Available for macOS · Windows · Linux · iOS · Android</p>
+          <p className="flex items-center gap-2 flex-wrap justify-center">
+            <span>Available for</span>
+            <span className="inline-flex items-center gap-1">
+              <SiApple className="w-4 h-4" />
+              <span>macOS</span>
+            </span>
+            <span>·</span>
+            <span className="inline-flex items-center gap-1">
+              <FaWindows className="w-4 h-4" />
+              <span>Windows</span>
+            </span>
+            <span>·</span>
+            <span className="inline-flex items-center gap-1">
+              <SiLinux className="w-4 h-4" />
+              <span>Linux</span>
+            </span>
+            <span>·</span>
+            <span className="inline-flex items-center gap-1">
+              <SiIos className="w-4 h-4" />
+              <span>iOS</span>
+            </span>
+            <span>·</span>
+            <span className="inline-flex items-center gap-1">
+              <SiAndroid className="w-4 h-4" />
+              <span>Android</span>
+            </span>
+          </p>
         </div>
 
         {/* Visual window mockup from Figma design */}

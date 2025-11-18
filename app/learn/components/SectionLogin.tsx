@@ -15,7 +15,7 @@ export default function SectionLogin() {
         <div className="flex flex-col gap-6">
           {/* Overline label */}
           <p className="text-xs font-medium uppercase tracking-[0.18em] text-zinc-500">
-            No accounts. No friction.
+            Private by default. Accounts optional.
           </p>
 
           {/* Main heading */}
@@ -25,9 +25,10 @@ export default function SectionLogin() {
 
           {/* Supporting paragraph */}
           <p className="max-w-xl text-base md:text-lg text-zinc-600">
-            Cowvert runs without sign-ups, accounts, or emails. <br />
-            Need sync or lifetime access across devices? <br />
-            Just sign in — no strings attached.
+            Cowvert works without sign-ups, accounts, or emails. <br />
+            If you want sync or lifetime access across devices, simply sign in.{" "}
+            <br />
+            No strings attached.
           </p>
         </div>
 
