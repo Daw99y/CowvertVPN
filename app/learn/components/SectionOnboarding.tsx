@@ -65,7 +65,7 @@ export default function SectionOnboarding() {
           >
             Start Free
           </MotionButton>
-          <Link href="/pricing">
+          <Link href="#pricing">
             <MotionButton
               type="button"
               variant="secondary"

@@ -230,7 +230,7 @@ function LoginDeviceMockup() {
 
                 {/* Get lifetime plan link */}
                 <Link
-                  href="/pricing"
+                  href="#pricing"
                   className="absolute left-1/2 -translate-x-1/2 top-[736px] flex items-center gap-1 hover:opacity-70 transition-opacity"
                 >
                   <p className="text-[12px] font-medium text-black">

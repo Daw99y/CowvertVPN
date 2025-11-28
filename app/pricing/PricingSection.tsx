@@ -15,12 +15,12 @@ import {
   TokensIcon,
 } from "@radix-ui/react-icons";
 import MotionButton from "@/components/ui/MotionButton";
-import PurchaseModal from "../components/PurchaseModal";
-import MotionSection from "../components/ui/MotionSection";
+import PurchaseModal from "@/app/components/PurchaseModal";
+import MotionSection from "@/app/components/ui/MotionSection";
 
 type ActivePurchaseModal = "free" | "lifetime" | null;
 
-export default function PricingPage() {
+export default function PricingSection() {
   const [activePurchaseModal, setActivePurchaseModal] =
     useState<ActivePurchaseModal>(null);
 
@@ -214,3 +214,4 @@ export default function PricingPage() {
     </section>
   );
 }
+

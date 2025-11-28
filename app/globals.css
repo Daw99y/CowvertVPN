@@ -21,10 +21,17 @@
   --radius-xl: 9999px;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   background: var(--background);
   color: var(--foreground);
   font-family: var(--font-sans);
+  /* Prevent double scrollbars by moving overflow handling here */
+  overflow-x: hidden;
+  width: 100%;
 }
 
 /* Ensure Tailwind's .font-sans on body uses Varela Round stack */
@@ -44,5 +51,11 @@ body.font-sans {
   /* Custom square-ish radius for elements that should not be fully pill-shaped */
   .rounded-square {
     border-radius: 0.5rem; /* ~8px, tighter rectangle */
+  }
+  
+  /* Fix for Safari/Chrome flashing on fixed elements */
+  .backface-hidden {
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
   }
 }

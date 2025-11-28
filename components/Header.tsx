@@ -40,7 +40,7 @@ export default function Header() {
         isOpen={isDownloadModalOpen}
         onClose={() => setIsDownloadModalOpen(false)}
       />
-      <header className="fixed top-0 left-0 z-50 w-full bg-white/80 backdrop-blur-md border-b border-zinc-100 will-change-transform">
+      <header className="fixed top-0 left-0 z-50 w-full bg-white/80 backdrop-blur-md border-b border-zinc-100 transform-gpu backface-hidden">
         <div className="relative w-full px-6 h-[72px]">
           <div className="flex h-full items-center justify-between">
           {/* Left: Logo + Nav (flush left) */}
@@ -56,10 +56,10 @@ export default function Header() {
             </Link>
             {/* Desktop Navigation - hidden on mobile */}
             <div className="hidden md:flex items-center gap-6">
-              <Link href="/pricing" className="text-zinc-700 hover:text-black">
+              <Link href="#pricing" className="text-zinc-700 hover:text-black">
                 Pricing
               </Link>
-              <Link href="/learn" className="text-zinc-700 hover:text-black">
+              <Link href="#learn" className="text-zinc-700 hover:text-black">
                 Learn
               </Link>
               <a
@@ -143,14 +143,14 @@ export default function Header() {
           >
             <div className="flex flex-col items-center gap-6 w-full">
               <Link
-                href="/pricing"
+                href="#pricing"
                 onClick={closeMobileMenu}
                 className="text-3xl text-zinc-700 hover:text-black transition-colors"
               >
                 Pricing
               </Link>
               <Link
-                href="/learn"
+                href="#learn"
                 onClick={closeMobileMenu}
                 className="text-3xl text-zinc-700 hover:text-black transition-colors"
               >

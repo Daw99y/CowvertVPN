@@ -10,7 +10,7 @@ export default function Footer() {
 
   // Base styles shared by all footer nav items (links + button)
   const baseItemClasses =
-    "inline-flex items-center border border-zinc-200 bg-white text-xs font-semibold text-zinc-900 shadow-sm transition hover:border-zinc-300 hover:bg-zinc-50";
+    "inline-flex items-center border border-zinc-200 bg-white text-xs font-semibold text-zinc-900 shadow-sm transition hover:border-zinc-300 hover:bg-zinc-50 pointer-events-auto";
 
   // Common sizing so shapes feel like the ToyFight menu
   const sizeClasses = "px-4 md:px-5 py-2";
@@ -19,7 +19,7 @@ export default function Footer() {
 
   // Simple config for footer links
   const footerLinks = [
-    { label: "Pricing", href: "/docs", external: false },
+    { label: "Pricing", href: "#pricing", external: false },
     {
       label: "Discord",
       href: "https://discord.gg/cEtRnVS2",
@@ -38,7 +38,7 @@ export default function Footer() {
   ];
 
   return (
-    <footer className="relative z-50 ">
+    <footer className="relative z-50 -mt-24 pointer-events-none">
       <Modal
         isOpen={isDownloadModalOpen}
         onClose={() => setIsDownloadModalOpen(false)}

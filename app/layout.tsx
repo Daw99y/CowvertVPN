@@ -32,7 +32,7 @@ export default function RootLayout({
       <body
         className={`${varelaRound.variable} ${geistMono.variable} antialiased font-sans`}
       >
-        <div className="relative min-h-screen flex flex-col overflow-x-hidden">
+        <div className="relative min-h-screen flex flex-col">
           <Header />
           <main className="flex-1">{children}</main>
           <Footer />

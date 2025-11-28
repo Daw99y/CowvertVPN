@@ -1,3 +1,5 @@
+"use client";
+
 import Image from "next/image";
 import SectionOnboarding from "./components/SectionOnboarding";
 import SectionLogin from "./components/SectionLogin";
@@ -6,20 +8,17 @@ import SectionServers from "./components/SectionServers";
 import SectionConnected from "./components/SectionConnected";
 import SectionCTA from "./components/SectionCTA";
 
-export default function LearnPage() {
+export default function LearnSection() {
   return (
-    <>
-      {/* Top-level <main> wraps all Learn content so it's easy to reason about layout */}
-      <main className="relative min-h-screen bg-linear-to-b from-white to-zinc-50">
-        <SectionOnboarding />
-        <SectionLogin />
-        <SectionInfo />
-        <SectionServers />
-        <SectionConnected />
-        <SectionCTA />
-      </main>
+    <section className="relative min-h-screen bg-linear-to-b from-white to-zinc-50">
+      <SectionOnboarding />
+      <SectionLogin />
+      <SectionInfo />
+      <SectionServers />
+      <SectionConnected />
+      <SectionCTA />
 
-      {/* Grass image at bottom of Learn page only */}
+      {/* Grass image at bottom of Learn section */}
       <div className="absolute bottom-0 left-0 right-0 w-full overflow-hidden pointer-events-none z-0">
         <Image
           src="/images/grass.svg"
@@ -30,6 +29,7 @@ export default function LearnPage() {
           priority
         />
       </div>
-    </>
+    </section>
   );
 }
+
