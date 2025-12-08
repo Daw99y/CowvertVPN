@@ -9,9 +9,10 @@ import MotionButton from "@/components/ui/MotionButton";
 import PurchaseModal from "@/app/components/PurchaseModal";
 import MotionSection from "@/app/components/ui/MotionSection";
 
-// Map image from new Figma design
+// Map image from new Figma design with a local fallback for deploy reliability
 const FIGMA_CONNECTED_MAP =
   "https://www.figma.com/api/mcp/asset/3ae0076e-b3b3-4afd-9661-c1299ad8c036";
+const LOCAL_CONNECTED_MAP = "/images/worldmap.png";
 
 // Asterisk icon reused from Section 1
 const FIGMA_ASTERISK_ICON = "/images/learn-asterisk.png";
@@ -27,6 +28,7 @@ export default function SectionConnected() {
   const [seconds, setSeconds] = useState(0);
   const [hasStarted, setHasStarted] = useState(false);
   const sectionRef = useRef<HTMLElement | null>(null);
+  const [mapSrc, setMapSrc] = useState(FIGMA_CONNECTED_MAP);
 
   // IntersectionObserver to start timer when section is visible
   useEffect(() => {
@@ -89,7 +91,15 @@ export default function SectionConnected() {
       <MotionSection className="mx-auto flex w-full flex-col items-center">
         {/* Visual window mockup from Figma design */}
         <div className="relative mt-16 w-full">
-          <ResponsiveConnectedContainer displayTime={displayTime} />
+          <ResponsiveConnectedContainer
+            displayTime={displayTime}
+            mapSrc={mapSrc}
+            onMapError={() =>
+              setMapSrc((current) =>
+                current === LOCAL_CONNECTED_MAP ? current : LOCAL_CONNECTED_MAP
+              )
+            }
+          />
         </div>
 
         {/* Text + CTAs below the card */}
@@ -183,8 +193,12 @@ export default function SectionConnected() {
  */
 function ResponsiveConnectedContainer({
   displayTime,
+  mapSrc,
+  onMapError,
 }: {
   displayTime: string;
+  mapSrc: string;
+  onMapError: () => void;
 }) {
   const containerRef = useRef<HTMLDivElement>(null);
   const contentRef = useRef<HTMLDivElement>(null);
@@ -226,7 +240,11 @@ function ResponsiveConnectedContainer({
                 transition: "transform 0.2s ease-out",
               }}
             >
-              <ConnectedWindow displayTime={displayTime} />
+              <ConnectedWindow
+                displayTime={displayTime}
+                mapSrc={mapSrc}
+                onMapError={onMapError}
+              />
             </div>
           </div>
         </div>
@@ -239,7 +257,15 @@ function ResponsiveConnectedContainer({
  * ConnectedWindow – macOS-style mockup matching Figma design (1400x900)
  * Shows connected VPN state with map, stats, and timer
  */
-function ConnectedWindow({ displayTime }: { displayTime: string }) {
+function ConnectedWindow({
+  displayTime,
+  mapSrc,
+  onMapError,
+}: {
+  displayTime: string;
+  mapSrc: string;
+  onMapError: () => void;
+}) {
   return (
     <div className="relative mx-auto w-[1400px] h-[900px] rounded-[30px] bg-white border-[2] border-black-200/80 shadow-[0_7.2px_21.6px_rgba(0,0,0,0.096)]">
       {/* Inner content wrapper with overflow-hidden to clip map and internals */}
@@ -282,12 +308,13 @@ function ConnectedWindow({ displayTime }: { displayTime: string }) {
           {/* World map background */}
           <div className="absolute inset-0 overflow-hidden">
             <Image
-              src={FIGMA_CONNECTED_MAP}
+              src={mapSrc}
               alt="Connected VPN map"
               fill
               sizes="1400px"
               priority
               className="object-cover opacity-80"
+              onError={onMapError}
             />
 
             {/* Server marker – green dot at position from Figma */}

@@ -4,16 +4,16 @@ import type { ReactNode } from "react";
 import { motion, type Variants } from "framer-motion";
 
 const FADE_IN_UP_TRANSITION = {
-  duration: 0.8,
-  ease: [0.2, 0.65, 0.3, 0.9] as const,
+  duration: 0.6,
+  ease: "easeOut" as const,
 };
 
 export const fadeInUp: Variants = {
-  hidden: { opacity: 0, y: 40, scale: 0.96 },
+  hidden: { opacity: 0, y: 24, scale: 0.98 },
   show: {
     opacity: 1,
     y: 0,
-    scale: [0.96, 1],
+    scale: [0.98, 1],
     transition: FADE_IN_UP_TRANSITION,
   },
 };
@@ -51,10 +51,7 @@ export default function MotionSection({
       transition={transition}
       {...(animateOnLoad
         ? { animate: "show" }
-        : {
-            whileInView: "show",
-            viewport: { once: true, amount: 0.25 },
-          })}
+        : { whileInView: "show", viewport: { once: true, margin: "-100px" } })}
     >
       {children}
     </MotionComponent>

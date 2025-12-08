@@ -25,7 +25,7 @@ export default function SectionOnboarding() {
   return (
     <section
       id="learn-hero"
-      className="relative min-h-screen flex items-center justify-center py-24 md:py-32 lg:py-36 px-6 bg-white"
+      className="relative min-h-screen flex items-center justify-center py-24 md:py-32 lg:py-36 px-6 bg-whiteC"
       aria-labelledby="learn-hero-heading"
     >
       <PurchaseModal
@@ -34,6 +34,7 @@ export default function SectionOnboarding() {
       />
       {/* Constrain content to a readable width and center it */}
       <MotionSection
+        animateOnLoad
         className="mx-auto flex w-full flex-col items-center"
       >
         {/* Small overline label */}

@@ -35,7 +35,7 @@ export default function PricingSection() {
         onClose={handleCloseModal}
       />
       <div className="mx-auto max-w-6xl px-6">
-        <MotionSection className="mx-auto max-w-3xl text-center">
+        <MotionSection animateOnLoad className="mx-auto max-w-3xl text-center">
           <h1 className="text-4xl md:text-5xl font-semibold tracking-tight text-zinc-900">
             Simple, transparent pricing
           </h1>
@@ -49,6 +49,7 @@ export default function PricingSection() {
         <div className="relative mt-12">
           <div className="absolute inset-0 bg-gradient-radial from-white via-zinc-100/60 to-transparent pointer-events-none" />
           <MotionSection
+            animateOnLoad
             className="relative grid grid-cols-1 gap-6 md:grid-cols-2"
             delay={0.1}
           >
