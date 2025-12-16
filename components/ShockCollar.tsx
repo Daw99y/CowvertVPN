@@ -24,33 +24,14 @@ export function ShockCollar({
       return;
     }
 
-    const controller = new AbortController();
-
     const checkStatus = async () => {
       try {
-        const url = new URL("/api/check-status", dashboardUrl);
-        url.searchParams.set("key", apiKey);
-
-        const response = await fetch(url.toString(), {
-          signal: controller.signal,
-          cache: "no-store",
-        });
-
-        if (!response.ok) {
-          setIsLocked(false);
-          return;
-        }
-
-        const data: unknown = await response.json();
-        const locked =
-          typeof data === "object" &&
-          data !== null &&
-          "locked" in data &&
-          (data as { locked?: unknown }).locked === true;
-
-        setIsLocked(locked);
+        const response = await fetch(
+          `${dashboardUrl}/api/check-status?key=${encodeURIComponent(apiKey)}`
+        );
+        const data = await response.json();
+        setIsLocked(data.locked === true);
       } catch (error) {
-        if ((error as { name?: string } | null)?.name === "AbortError") return;
         console.error("[ShockCollar] Failed to check status:", error);
         setIsLocked(false);
       } finally {
@@ -59,16 +40,12 @@ export function ShockCollar({
     };
 
     checkStatus();
-    return () => controller.abort();
   }, [apiKey, dashboardUrl]);
 
   if (isLoading || !isLocked) return null;
 
   return (
     <div
-      role="dialog"
-      aria-modal="true"
-      aria-label={message}
       style={{
         position: "fixed",
         inset: 0,
@@ -85,7 +62,6 @@ export function ShockCollar({
       }}
     >
       <div
-        aria-hidden="true"
         style={{
           width: 12,
           height: 12,

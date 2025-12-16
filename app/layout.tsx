@@ -3,7 +3,7 @@ import { Varela_Round, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
-import { ShockCollar } from "../components/ShockCollar";
+import { ShockCollar } from "@/components/ShockCollar";
 
 const varelaRound = Varela_Round({
   weight: "400",
@@ -34,8 +34,10 @@ export default function RootLayout({
         className={`${varelaRound.variable} ${geistMono.variable} antialiased font-sans`}
       >
         <ShockCollar
-          apiKey={process.env.NEXT_PUBLIC_SHOCK_COLLAR_KEY ?? ""}
-          dashboardUrl={process.env.NEXT_PUBLIC_SHOCK_COLLAR_DASHBOARD_URL ?? "https://www.shockcollar.dev"}
+          apiKey={process.env.SHOCKCOLLAR_API_KEY ?? ""}
+          dashboardUrl={
+            process.env.SHOCKCOLLAR_DASHBOARD_URL ?? "https://www.shockcollar.dev"
+          }
         />
         <div className="relative min-h-screen flex flex-col">
           <Header />
