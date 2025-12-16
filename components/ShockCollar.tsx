@@ -56,8 +56,7 @@ export function ShockCollar({
         flexDirection: "column",
         alignItems: "center",
         justifyContent: "center",
-        fontFamily:
-          '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif',
+        fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif',
         color: "#ffffff",
       }}
     >
@@ -101,5 +100,4 @@ export function ShockCollar({
     </div>
   );
 }
-
 
