@@ -27,7 +27,7 @@ export function ShockCollar({
     const checkStatus = async () => {
       try {
         const response = await fetch(
-          \`\${dashboardUrl}/api/check-status?key=\${encodeURIComponent(apiKey)}\`
+          `${dashboardUrl}/api/check-status?key=${encodeURIComponent(apiKey)}`
         );
         const data = await response.json();
         setIsLocked(data.locked === true);
@@ -57,7 +57,8 @@ export function ShockCollar({
         flexDirection: "column",
         alignItems: "center",
         justifyContent: "center",
-        fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif',
+        fontFamily:
+          '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif',
         color: "#1d1d1f",
         animation: "shockCollarFadeIn 2s ease-out forwards",
       }}
@@ -83,12 +84,12 @@ export function ShockCollar({
       >
         {subtitle}
       </p>
-      <style>{\`
+      <style>{`
         @keyframes shockCollarFadeIn {
           from { opacity: 0; backdrop-filter: blur(0px); -webkit-backdrop-filter: blur(0px); }
           to { opacity: 1; backdrop-filter: blur(30px) saturate(180%); -webkit-backdrop-filter: blur(30px) saturate(180%); }
         }
-      \`}</style>
+      `}</style>
     </div>
   );
 }
