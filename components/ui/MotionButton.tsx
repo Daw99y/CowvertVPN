@@ -1,14 +1,13 @@
 "use client";
 
-import { forwardRef } from "react";
-import { motion, type HTMLMotionProps } from "framer-motion";
+import { forwardRef, type ButtonHTMLAttributes } from "react";
 
 type MotionButtonVariant = "primary" | "secondary" | "text" | "icon";
 
 type MotionButtonProps = {
   variant?: MotionButtonVariant;
   disableHover?: boolean;
-} & HTMLMotionProps<"button">;
+} & ButtonHTMLAttributes<HTMLButtonElement>;
 
 const baseClasses =
   "inline-flex select-none items-center justify-center font-medium transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-zinc-900 focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-60";
@@ -21,25 +20,31 @@ const variantClasses: Record<MotionButtonVariant, string> = {
   icon: "bg-zinc-900 text-white",
 };
 
-const hoverAnimation = { scale: 1.02 };
-const tapAnimation = { scale: 0.98 };
-const transition = { duration: 0.15 };
-
 const MotionButton = forwardRef<HTMLButtonElement, MotionButtonProps>(
-  ({ variant = "primary", className = "", disableHover = false, disabled, children, ...rest }, ref) => {
+  (
+    {
+      variant = "primary",
+      className = "",
+      disableHover = false,
+      disabled,
+      children,
+      ...rest
+    },
+    ref
+  ) => {
     const combinedClassName = [baseClasses, variantClasses[variant], className]
       .filter(Boolean)
       .join(" ");
 
-    const animationProps =
-      disableHover || disabled
-        ? { transition }
-        : { whileHover: hoverAnimation, whileTap: tapAnimation, transition };
-
     return (
-      <motion.button ref={ref} className={combinedClassName} disabled={disabled} {...animationProps} {...rest}>
+      <button
+        ref={ref}
+        className={combinedClassName}
+        disabled={disabled}
+        {...rest}
+      >
         {children}
-      </motion.button>
+      </button>
     );
   }
 );
